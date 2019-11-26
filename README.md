@@ -3,19 +3,19 @@
 A simple file.io client for android.
 
 ## Goals
- [] File browser
- [] Upload a file
- [] Warn user when file is too large (>5GB)
- [] Warn user if no file has been selected
- [] Warn user when something goes wrong via in-app notification or something
- [] Add some sort of upload % indicator
- [] History tab
- [] Date, Name, Expiration Time, Link
- [] Allow entries to be deleted
- [] Share links
- [] About tab
- [] Support dark and light themes
- [] Beauty treatment
+ - [] File browser
+ - [] Upload a file
+ - [] Warn user when file is too large (>5GB)
+ - [] Warn user if no file has been selected
+ - [] Warn user when something goes wrong via in-app notification or something
+ - [] Add some sort of upload % indicator
+ - [] History tab
+ - [] Date, Name, Expiration Time, Link
+ - [] Allow entries to be deleted
+ - [] Share links
+ - [] About tab
+ - [] Support dark and light themes
+ - [] Beauty treatment
 
 ## Getting Started
 
