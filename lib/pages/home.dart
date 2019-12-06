@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(title: Text('File.io Cloud Client ☁', style: TextStyle(),),
       actions: <Widget>[
         Icon(Icons.lightbulb_outline)

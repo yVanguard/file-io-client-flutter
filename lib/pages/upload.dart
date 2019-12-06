@@ -1,3 +1,7 @@
+
+import 'package:file_io_client/models/result_upload.dart';
+import 'package:file_io_client/utils/upload_task_flutter_uploader.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 class UploadPage extends StatefulWidget {
@@ -8,7 +12,10 @@ class UploadPage extends StatefulWidget {
 class _UploadPageState extends State<UploadPage> {
 
   double _expirationTime = 14;
-  String _filePath = '';
+  String _filePath;
+  ResultUpload result;
+
+  var _resultField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +23,20 @@ class _UploadPageState extends State<UploadPage> {
       child: Column(
         children: <Widget>[
           Divider(),
-          Text('Choose a file', style: TextStyle(fontSize: 30.0),),
+          Text('Choose a file', style: TextStyle(fontSize: 25.0),),
           Divider(),
           Container(
             color: Colors.blue[100],
-            child: IconButton(icon: Icon(Icons.folder), iconSize: 100.0, onPressed: (){},),
+            child: IconButton(
+              icon: Icon(Icons.folder),
+              iconSize: 60.0,
+              onPressed: () async {
+                _filePath = await FilePicker.getFilePath(type: FileType.ANY);
+                },
+              ),
           ),
           Divider(),
-          Text('Set expiration time', style: TextStyle(fontSize: 30.0),),
+          Text('Set expiration time', style: TextStyle(fontSize: 25.0),),
           Slider(
             value: _expirationTime,
             max: 14,
@@ -36,23 +49,20 @@ class _UploadPageState extends State<UploadPage> {
             },
           ),
           Divider(),
-          // TODO: create or find a better looking widget for this.
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(30.0),
-                right: Radius.circular(30.0)
-                )
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-              Text('Upload', style: TextStyle(fontSize: 30, color: Colors.white),),
-              Icon(Icons.file_upload, color: Colors.white)
-                        ],
-                      )
-                  )
+          RaisedButton(onPressed: (){
+            print("Upload function was called.");
+            //uploadCat();
+          },
+          child: Text('Upload')
+          ),
+
+          TextFormField(controller: _resultField,),
+
+
+          RaisedButton(onPressed: (){
+
+          },
+          child: Text('Debug'),)
         ],
       ),
     );

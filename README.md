@@ -7,8 +7,9 @@ A simple file.io client for android.
 </p>
 
 ## Goals
- - [ ] File browser
- - [ ] Upload a file
+ - [x] File browser
+ - [x] Upload a file
+ - [ ] Read the result of the upload
  - [ ] Warn user when file is too large (>5GB)
  - [ ] Warn user if no file has been selected
  - [ ] Warn user when something goes wrong via in-app notification or something
