@@ -30,5 +30,4 @@ class ResultUpload{
     'link': link == null ? null : link,
     'expiry': expiry == null ? null : expiry,
   };
-
 }

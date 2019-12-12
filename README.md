@@ -1,5 +1,11 @@
 # file_io_client
 
+## Aplicativo criado como projeto final da disciplina de Dispositivos Móveis
+Alunos:
+- Murilo Ceotto Azzi
+- Renan Gaspar
+- Lucas Fernando
+
 A simple file.io client for android.
 
 <p align="center">
@@ -9,18 +15,18 @@ A simple file.io client for android.
 ## Goals
  - [x] File browser
  - [x] Upload a file
- - [ ] Read the result of the upload
+ - [x] Read the result of the upload
  - [ ] Warn user when file is too large (>5GB)
- - [ ] Warn user if no file has been selected
- - [ ] Warn user when something goes wrong via in-app notification or something
- - [ ] Add some sort of upload % indicator
+ - [x] Warn user if no file has been selected
+ - [x] Warn user when something goes wrong via in-app notification or something
+ - [x] Add some sort of upload % indicator
  - [ ] History tab
  - [ ] Date, Name, Expiration Time, Link
  - [ ] Allow entries to be deleted
- - [ ] Share links
- - [ ] About tab
- - [ ] Support dark and light themes
- - [ ] Beauty treatment
+ - [x] Share links
+ - [x] About tab
+ - [x] Support dark and light themes
+ - [x] Beauty treatment
 
 ## Getting Started
 

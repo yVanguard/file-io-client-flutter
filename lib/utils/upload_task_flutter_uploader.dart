@@ -1,4 +1,4 @@
-import 'package:file_io_client/models/result_upload.dart';
+import 'dart:convert';
 import 'package:flutter_uploader/flutter_uploader.dart';
 
 final uploader = FlutterUploader();
@@ -6,26 +6,25 @@ final uploader = FlutterUploader();
 // Trying to figure out how to send a cat to file.io
 // https://pub.dev/documentation/flutter_uploader/latest/
 
-Future<ResultUpload> uploadCat({filename: '/storage/emulated/0/Download/catpeek.png'}) async {
+String uploadCat({filename: '/storage/emulated/0/Download/catpeek.png'}) {
 
   UploadTaskResponse result;
 
-  await uploader.enqueue(
+  String link;
+    uploader.enqueue(
     url: "https://file.io",
     files: [FileItem(filename: filename, savedDir: '', fieldname:"file")],
     method: UploadMethod.POST,
   );
 
   uploader.result.listen((result) {
-      //... code to handle result
-      print('result.response:');
-      print('---------------------');
-      print(result.response);
-      print('---------------------');
+    Map<String, dynamic> _result = jsonDecode(result.response);
+    link = _result['link'];
+
   }, onError: (ex, stacktrace) {
     print("$ex, $stacktrace");
-      // ... code to handle error
+    link = 'Error';
   });
 
-  return ResultUpload.fromJson(result.response);
+  return link;
 }

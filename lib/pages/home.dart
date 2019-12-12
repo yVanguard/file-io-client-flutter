@@ -1,6 +1,10 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:file_io_client/pages/about.dart';
 import 'package:file_io_client/pages/upload.dart';
+import 'package:file_io_client/themes/lightblue.dart';
+import 'package:file_io_client/themes/purpledark.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,9 +14,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // https://www.youtube.com/watch?v=n_FRmFm9Tyw
   int _selectedPage = 0;
+
   List _pageOptions = [
     UploadPage(),
-    Text('Content of History page'),
+    Text('This is where all links would be saved if we had a database n stuff'),
     AboutPage()
   ];
 
@@ -20,9 +25,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(title: Text('File.io Cloud Client ☁', style: TextStyle(),),
       actions: <Widget>[
-        Icon(Icons.lightbulb_outline)
+        IconButton(
+                    icon: Icon(Icons.lightbulb_outline),
+                    onPressed: (){
+                      if (Theme.of(context).brightness == Brightness.light){
+                        DynamicTheme.of(context).setThemeData(myPurpleDarkTheme);
+                      }
+                      else{
+                        DynamicTheme.of(context).setThemeData(myLightBlueTheme);                        
+                      }
+                    },
+                  )
         ],
       ),
       body: _pageOptions[_selectedPage],
